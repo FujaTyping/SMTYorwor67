@@ -1,0 +1,73 @@
+.Title {
+    font-family: 'Bebas Neue' !important;
+}
+
+.Cool {
+    font-family: 'Workbench' !important;
+}
+
+.text-focus-in {
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.1s both;
+}
+
+.text-focus-in-decs {
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.75s both;
+}
+
+.vibrate-1 {
+    animation: vibrate-1 0.3s linear infinite both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes vibrate-1 {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
