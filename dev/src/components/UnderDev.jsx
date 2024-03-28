@@ -4,9 +4,16 @@ import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
+import useSound from 'use-sound';
+import Countdown from 'react-countdown';
+import Divider from '@mui/material/Divider';
+import Fab from '@mui/material/Fab';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import MusicOffIcon from '@mui/icons-material/MusicOff';
 
 /* Assets */
 import Yorwor from '../assets/Icon/Yorwor.png'
+import MenuSound from '../assets/Sound/Outerspace.mp3'
 
 const darkTheme = createTheme({
   palette: {
@@ -15,6 +22,11 @@ const darkTheme = createTheme({
 });
 
 function UnderDev() {
+  const [volume] = React.useState(0.25);
+  const [MenuOST, { stop }] = useSound(MenuSound, { volume });
+  let StateOST = 1;
+  MenuOST();
+
   return (
     <>
       <ThemeProvider theme={darkTheme}>
@@ -26,12 +38,17 @@ function UnderDev() {
               <Typography className='Title text-focus-in' variant="h3" gutterBottom>
                 SMT - M.4/5
               </Typography>
-              <Typography className='Cool text-focus-in-decs' variant="h5" gutterBottom>
-                We're making things more awesome - Be back soon
+              <hr />
+              <Typography style={{ marginTop: '18px' }} className='Cool text-focus-in-decs' variant="h5" gutterBottom>
+                We're making things more awesome <br />Be back soon (<Countdown date={1715018400000} />)
               </Typography>
             </div>
           </Box>
         </Box>
+        <Fab onClick={() => { if (StateOST == 1) { document.getElementById('MusicOFF').style.display = 'block'; document.getElementById('MusicON').style.display = 'none'; stop(); StateOST = 0; } else { document.getElementById('MusicOFF').style.display = 'none'; document.getElementById('MusicON').style.display = 'block'; stop(); MenuOST(); StateOST = 1; } }} id='ControlMusic' className='FabPause' aria-label="add">
+          <MusicNoteIcon id='MusicON' />
+          <MusicOffIcon style={{ display: 'none' }} id='MusicOFF' />
+        </Fab>
       </ThemeProvider>
     </>
   )

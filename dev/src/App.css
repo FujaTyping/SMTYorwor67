@@ -20,6 +20,17 @@
     animation: vibrate-1 0.3s linear infinite both;
 }
 
+.FabPause {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 1;
+}
+
+.FabOFF {
+    display: none;
+}
+
 @keyframes tracking-in-expand {
     0% {
         letter-spacing: -0.5em;
