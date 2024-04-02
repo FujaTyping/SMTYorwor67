@@ -22,8 +22,8 @@ const darkTheme = createTheme({
 });
 
 function UnderDev() {
-  const [volume] = React.useState(0.25);
-  const [MenuOST, { stop }] = useSound(MenuSound, { volume });
+  const [volume] = React.useState(0.35);
+  const [MenuOST, { stop }] = useSound(MenuSound, { volume, loop: true });
   let StateOST = 1;
   MenuOST();
 
