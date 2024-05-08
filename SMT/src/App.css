@@ -5,4 +5,35 @@
     font-weight: 400;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
+}
+
+.topnav {
+    color: white !important;
+}
+
+.topnav:hover {
+    background-color: white;
+    color: black !important;
+}
+
+.dropdown-item:hover {
+    background-color: #327aff !important;
+    color: white !important;
+}
+
+.nav-container {
+    background-color: #327aff;
+    border-radius: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-container {
+    background-color: #327aff;
+    color: white !important;
+}
+
+.white {
+    color: white !important;
 }
