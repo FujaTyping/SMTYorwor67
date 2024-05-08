@@ -21,6 +21,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
   },
+  /*
   {
     path: "/about",
     element: <About />,
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
     path: "/work",
     element: <Work />
   },
+  */
   {
     path: "*",
     element: <Notfound status={404} />
